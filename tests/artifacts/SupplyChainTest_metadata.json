@@ -1,0 +1,260 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "beforeAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchRecall",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchRecallAlreadyRecalled",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchRegisterEmptyDesc",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchRegisterEmptyName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchRegistration",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchSelfOwnershipTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testBatchZeroAddressOwnershipTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testIndividualRegistration",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testInvalidTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testOwnershipTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testOwnershipTransferToZeroAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testProductRecall",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testProductRecallAlreadyRecalled",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testProductRecallNonExistingProduct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testReentryRecall",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testRegisterEmptyDescription",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testRegisterEmptyName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "testSelfOwnershipTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"testBatchRecall()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchRegisterEmptyDesc()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchRegisterEmptyName()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchRegistration()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchSelfOwnershipTransfer()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchTransfer()": {
+					"notice": "#sender: account-1"
+				},
+				"testBatchZeroAddressOwnershipTransfer()": {
+					"notice": "#sender: account-1"
+				},
+				"testIndividualRegistration()": {
+					"notice": "#sender: account-1"
+				},
+				"testInvalidTransfer()": {
+					"notice": "#sender: account-1"
+				},
+				"testOwnershipTransfer()": {
+					"notice": "#sender: account-1"
+				},
+				"testOwnershipTransferToZeroAddress()": {
+					"notice": "#sender: account-1"
+				},
+				"testProductRecall()": {
+					"notice": "#sender: account-1"
+				},
+				"testRegisterEmptyName()": {
+					"notice": "#sender: account-1"
+				},
+				"testSelfOwnershipTransfer()": {
+					"notice": "#sender: account-2"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"tests/w6_SupplyChainContractAsm_test.sol": "SupplyChainTest"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/w6_SupplyChainContractAsm.sol": {
+			"keccak256": "0xcaad97cf87d08857a5673193c2ad011a641fbe78a13b765850b8ce2eaa3d222d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d7bbd63eec6f4e1bf16e5cf8c197bd0afed702d5027f8bd452ee63be42271da8",
+				"dweb:/ipfs/QmVpFabgKJ1Q7QBuLn6W2d5oBnBVMkPMGFM2GYVL7rpg2c"
+			]
+		},
+		"remix_accounts.sol": {
+			"keccak256": "0xab088ffd1cd1033f54c2486f151b5d02281a3b76724c8e6f48479c25a4f7809e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5ddaf9976b1838f7028cbedfaf7f6e1cf8c898e100221176ff1406ee8b599f23",
+				"dweb:/ipfs/QmX2FYLXYyo5Cn55ZX2CfngpscSh4mQhcMVzQdQsh2vqcG"
+			]
+		},
+		"remix_tests.sol": {
+			"keccak256": "0xe2783cdc204cba8c72494119339f1d90f9022b15d6c718c668b7f097d8e29787",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bb6a22e64c7f16bcaab63b1c1a1b269d5be8a6d37bdd9dec1718477ab916b18e",
+				"dweb:/ipfs/QmdkW1tT5iadBvaHMCoskhDGZKnfdg8o1D9CcoQYtdJet7"
+			]
+		},
+		"tests/w6_SupplyChainContractAsm_test.sol": {
+			"keccak256": "0xf0d400c2ae3a4d3b7e0fb363a21fac6961218010a37fba6aa1f8cc107267db6a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://cb7b9345184dbd1938b16200b7b562a228165f66129f97dfe8b1c65284cc4d19",
+				"dweb:/ipfs/QmbNau2rnL7af4A74EE2mZygaHseRJizLJAygjnrx1bvHL"
+			]
+		}
+	},
+	"version": 1
+}
