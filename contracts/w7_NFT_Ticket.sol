@@ -42,6 +42,7 @@ contract Cw7_NFT_Ticket is ERC721URIStorage, Ownable {
     mapping(uint256 => TicketInfo) public tickets;  // Mapping from token ID to TicketInfo
     mapping(address => uint256[]) public userTickets;  // Mapping from user address to list of owned ticket IDs
     mapping(uint256 => PurchaseInfo[]) public ticketPurchases;  // Mapping from token ID to list of PurchaseInfo
+    mapping(uint256 => uint256) public resalePrices;
 
     // Events to log the creation and purchase of tickets
     event TicketCreated(
@@ -57,6 +58,21 @@ contract Cw7_NFT_Ticket is ERC721URIStorage, Ownable {
         address buyer,
         uint256 ticketsBought
     );
+
+    event PriceChanged(
+        uint256 ticketId,
+        uint256 newPrice
+    );
+
+    event TicketTransferred(
+        uint256 indexed tokenId,
+        address indexed sender,
+        address indexed receiver,
+        uint256 ticketId
+    );
+    
+
+    error NewPriceIsZero(uint256 newPrice);
 
     // Constructor to initialize the NFT contract with a name, symbol, and fee percentages
     constructor(string memory name, string memory symbol, uint256 _creationFeePercentage, uint256 _purchaseFeePercentage) 
@@ -180,6 +196,41 @@ contract Cw7_NFT_Ticket is ERC721URIStorage, Ownable {
     }
 
     // Additional functions (e.g., for managing tickets, updating fees, etc.) would go here
+    function updateTicketPrice(uint256 _tokenId, uint256 newPrice) external onlyOwner {
+        if (newPrice == 0) { //revert if new price is zero
+            revert NewPriceIsZero(newPrice);
+        }
+        require(block.timestamp < tickets[_tokenId].ticketEndDate, "Event date passed"); //revert if already passed
+        require(tickets[_tokenId].creator != address(0), "Invalid ticket ID"); //revert if token is invalid
+        tickets[_tokenId].ticketPrice = newPrice;
+        emit PriceChanged(_tokenId, newPrice);
+    }
 
-    // ...
+    function transferTicket(address to, uint256 _tokenId) external {
+        // The target address is the zero address
+        require(to != address(0), "Cannot transfer to zero address");
+
+        // The ticket ID is invalid
+        require(tickets[_tokenId].creator != address(0), "Invalid ticket ID");
+        
+        // The caller is not the ticket owner.
+        require(ownerOf(_tokenId) == msg.sender, "Not ticket owner");
+        
+        // The event date has passed
+        require(block.timestamp < tickets[_tokenId].ticketEndDate, "Event date passed");
+        uint256[] storage senderTickets = userTickets[msg.sender];
+
+        for (uint256 i = 0; i < senderTickets.length; i++) {
+            if (senderTickets[i] == _tokenId) {
+                userTickets[msg.sender][i] = senderTickets[senderTickets.length - 1];
+                senderTickets.pop();
+                break;
+            }
+        }
+
+        userTickets[to].push(_tokenId); //give receiver
+        
+        //_transfer(msg.sender, to, _tokenId); // execute NFT transfer, using openzeppilin's _transfer https://docs.openzeppelin.com/contracts/3.x/api/token/erc721
+        emit TicketTransferred(_tokenId, msg.sender, to, _tokenId);
+    }
 }

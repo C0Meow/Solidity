@@ -137,6 +137,17 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "NewPriceIsZero",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "owner",
 						"type": "address"
@@ -261,6 +272,25 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ticketId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "PriceChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": true,
 						"internalType": "uint256",
 						"name": "tokenId",
@@ -317,6 +347,37 @@
 					}
 				],
 				"name": "TicketPurchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ticketId",
+						"type": "uint256"
+					}
+				],
+				"name": "TicketTransferred",
 				"type": "event"
 			},
 			{
@@ -546,6 +607,25 @@
 				"name": "renounceOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "resalePrices",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -803,6 +883,42 @@
 					}
 				],
 				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferTicket",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateTicketPrice",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -1165,11 +1281,11 @@
 			]
 		},
 		"contracts/w7_NFT_Ticket.sol": {
-			"keccak256": "0x1b514331d74af960a5f73923269985f4416c1865e2bd20ad8d82bd656059027d",
+			"keccak256": "0x310c199c9dba9df13e2a30563d17d4af0d60a9e933bcd2aa9ea2d672504df9b4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0c98818dabbf9e1a811f8c973f9ffc6d5a3c2a7160c583aa6fa32f49f25dc447",
-				"dweb:/ipfs/QmQs5HsGHkqCRmSdcokwN3XZXrLBYe7cNzQmSneLg8knu5"
+				"bzz-raw://3ea3f5764ffe9c8133965147e404afe7960985625ba8b6789c6c5c19247dcc27",
+				"dweb:/ipfs/QmNcpZ8KJ1TEwHWeC8Yq2UdiahPskNkSgxQVUAd6bDDFNS"
 			]
 		}
 	},
