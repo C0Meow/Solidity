@@ -1,0 +1,629 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "documentHash",
+						"type": "string"
+					}
+				],
+				"name": "DocumentVerified",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "Customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "riskScore",
+						"type": "uint256"
+					}
+				],
+				"name": "KYCCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "level",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "riskScore",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"name": "KYCUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "boolean",
+						"type": "bool"
+					}
+				],
+				"name": "ProfileStatusChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "r",
+						"type": "uint8"
+					}
+				],
+				"name": "ReviewsRequired",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "customer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newRiskScore",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "updateTime",
+						"type": "uint256"
+					}
+				],
+				"name": "RiskScoreUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "verifier",
+						"type": "address"
+					}
+				],
+				"name": "VerifierAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "verifier",
+						"type": "address"
+					}
+				],
+				"name": "VerifierRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_officer",
+						"type": "address"
+					}
+				],
+				"name": "addComplianceOfficer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_riskScore",
+						"type": "uint256"
+					}
+				],
+				"name": "createKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "customerExists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "customers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "kycStatus",
+						"type": "bool"
+					},
+					{
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "kycLevel",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastUpdated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "verifier",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "riskScore",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastReviewDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "getCustomerKYC",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					}
+				],
+				"name": "getRiskLevel",
+				"outputs": [
+					{
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_documentType",
+						"type": "string"
+					}
+				],
+				"name": "isDocumentVerified",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_officer",
+						"type": "address"
+					}
+				],
+				"name": "removeComplianceOfficer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					}
+				],
+				"name": "requiresReview",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_bool",
+						"type": "bool"
+					}
+				],
+				"name": "setProfileStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_riskScore",
+						"type": "uint256"
+					}
+				],
+				"name": "setRiskLevel",
+				"outputs": [
+					{
+						"internalType": "enum KYCRegistry.RiskLevel",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isActive",
+						"type": "bool"
+					}
+				],
+				"name": "updateKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "a",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_riskScore",
+						"type": "uint256"
+					}
+				],
+				"name": "updateRiskScore",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "verifiedDocuments",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "verifiers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_customer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_documentType",
+						"type": "string"
+					}
+				],
+				"name": "verifyDocument",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A simple KYC (Know Your Customer) registry system on blockchain Allows authorized verifiers to update customer KYC status and details",
+			"kind": "dev",
+			"methods": {
+				"addComplianceOfficer(address)": {
+					"details": "Adds a new authorized verifier",
+					"params": {
+						"_officer": "Address of the verifier to be added"
+					}
+				},
+				"constructor": {
+					"details": "Constructor sets the contract deployer as owner"
+				},
+				"createKYC(address,uint256)": {
+					"details": "Updates KYC status and details for a customer",
+					"params": {
+						"_customer": "Address of the customer"
+					}
+				},
+				"getCustomerKYC(address)": {
+					"details": "Retrieves KYC information for a customer",
+					"params": {
+						"_customer": "Address of the customer"
+					},
+					"returns": {
+						"_0": "Customer's KYC status, level, last update timestamp, and verifier address"
+					}
+				},
+				"removeComplianceOfficer(address)": {
+					"details": "Removes an authorized verifier",
+					"params": {
+						"_officer": "Address of the verifier to be removed"
+					}
+				},
+				"updateKYC(address,bool,bool)": {
+					"details": "Updates KYC status and details for a customer",
+					"params": {
+						"_customer": "Address of the customer"
+					}
+				}
+			},
+			"title": "KYC Registry Contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"w10_KYC.sol": "KYCRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"w10_KYC.sol": {
+			"keccak256": "0xeafc3e771429f6b891975b4e6a9d8acf261a3265af02d0f891de044e983b30c1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b806bee550a862306c17ca2294033027bfb800e7823e69a4d76550d449dce3e9",
+				"dweb:/ipfs/QmNykAqncXZjSP84kGACFsn85xs7iNCdxvFafWSUzC5n3i"
+			]
+		}
+	},
+	"version": 1
+}

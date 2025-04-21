@@ -6,13 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_interest_rate",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -241,19 +235,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "borrow",
-				"outputs": [],
-				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -536,6 +517,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "interest_rate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -653,13 +647,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "repay",
-				"outputs": [],
-				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -814,11 +801,11 @@
 	},
 	"sources": {
 		"w9_liquidity_lending_pool_hw.sol": {
-			"keccak256": "0xbb1dd254006828b0436ffd0e826b9aa32f8ae4214fdfe6a4a03027ee087da7de",
+			"keccak256": "0xf2d1a5e18bd9116f449ae5dc593922e6fa2f43ae3a2628307411f05532279d5a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://acacb909bdc416bf4dfe9004d0f9137e7cfef35af01703417d485c149843c866",
-				"dweb:/ipfs/QmRSuUfHzAqeDELmB9GUJY9erHWdunMoQm53Ad7U8ooqPS"
+				"bzz-raw://aa0f651b899bc17e333de4c49e4a41907333efcbb17545de72b452a3a30d1c27",
+				"dweb:/ipfs/QmPx4tHdZqBZj7zizohAMMrXSsJstan8uPq4kksipEap6D"
 			]
 		}
 	},
